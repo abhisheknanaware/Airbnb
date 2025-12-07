@@ -1,0 +1,17 @@
+.head{
+    text-align: center;
+    margin: 20px;
+    font-size: 34px;
+    color: red;
+}
+.a{
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 542px;
+    color: black;
+}
+.active{
+    background-color: #df6363;
+    box-shadow: 0px 0px 3px 1px #f4e2e7;
+    padding: 4px;
+}
