@@ -1,0 +1,12 @@
+const express = require('express');
+const storerouter = express.Router();
+const {arr}=require('./hostrouter');
+const storecontroller = require('../controllers/storecontroller');
+storerouter.get("/",storecontroller.getindex);
+storerouter.get("/bookings",storecontroller.getbookings);
+storerouter.get("/favourite_list",storecontroller.getfavouritelist);
+storerouter.get("/homes",storecontroller.gethome);
+storerouter.get("/homes/:homeid",storecontroller.gethomebyid);
+storerouter.post("/favourite_list",storecontroller.postfavouritelist);
+storerouter.post("/favourite_list/deletefav/:homeId",storecontroller.postdeletefavourite);
+module.exports = storerouter;

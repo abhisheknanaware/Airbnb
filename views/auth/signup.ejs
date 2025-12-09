@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle%></title>
+    <link rel="stylesheet" href="\nav.css">
+    <link rel="stylesheet" href="\signup.css">
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <%- include('../partials/nav')%>
+    <div class="form-container">
+        <h1>Sign Up</h1>
+        <form action="/signup" method="post" class="signup-form">
+
+        <%- include('../partials/error')%>
+
+            <div class="form-group">
+                <label for="firstname">First name:</label>
+                <input type="text" id="firstname" name="firstname" placeholder="First Name" value="<%= oldInput.firstname?oldInput.firstname:''%>" required>
+
+                <label for="lastname" class="lastname">Last name:</label>
+                <input type="text" id="lastname" name="lastname" placeholder="Last Name" value="<%= oldInput.lastname?oldInput.lastname:''%>">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="test@gmail.com" value="<%= oldInput.email?oldInput.email:''%>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Password" name="password"  required>
+            </div>
+
+            <div class="form-group">
+                <label for="Confirmpassword">Confirm Password:</label>
+                <input type="password" id="Confirmpassword" placeholder="Password" name="Confirmpassword"  required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">User Type</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="Usertype" value="guest" id="guest" checked=" <%= oldInput.Usertype==='guest'%>" >
+                        <span>Guest</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="Usertype" id="host" value="host" <%=oldInput.Usertype==='host'%>">
+                        <span>Host</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label style="display: flex; align-items: center; gap: 8px;">
+                    <input type="checkbox" name="terms" id="terms" required style="width: 18px; height: 18px; margin: 0;">
+                    <span>I agree to terms and conditions</span>
+                </label>
+            </div>
+
+            <button type="submit" class="btn-submit">Sign Up</button>
+        </form>
+
+        <div class="login-link">
+            Already have an account? <a href="/login">Login here</a>
+        </div>
+    </div>
+</body>
+
+</html>

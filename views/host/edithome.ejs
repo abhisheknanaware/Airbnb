@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="\addh.css">
+    <link rel="stylesheet" href="\nav.css">
+</head>
+
+<body>
+    <%-include('../partials/nav')%>
+    <div class="subform">
+        <h1 class="head"><%= editing ?"Edit":"Register"%> your Home now on Airnb</h1>
+        <form action="/host/<%=editing ?"edithome":"add-home"%>" method="post" encType="multipart/form-data" class="forms" >
+            <input type="text" placeholder="Enter home name"  name="housename" value=<%= editing ?home.housename:'' %> >
+            <input type="text" placeholder="Price per night" name="price" value=<%= editing ?home.price:'' %> >
+            <input type="text" placeholder="Enter the Location" name="location" value=<%= editing ?home.location:'' %> >
+            <input type="file" multiple accept="image/jpg, image/jpeg, image/png" name="image" class="file"> 
+            <input type="text" placeholder="Enter rating" name="rating" value=<%= editing ?home.rating:'' %> >
+            <input name="_id" type="hidden" value=<%= editing ?home._id:"" %> >
+            <input type="submit" value=<%= editing?"Update":"Add Home"%> id="sub">
+        </form>
+    </div>
+
+</body>
+
+</html>

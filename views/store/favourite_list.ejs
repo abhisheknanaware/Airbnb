@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airnb</title>
+    <link rel="stylesheet" href="/home.css">
+    <link rel="stylesheet" href="/nav.css">
+</head>
+
+<body>
+    <%-include('../partials/nav')%>
+        <h2 class="head2">here are your Favourites</h1>
+
+            <style>
+                /* Book button + small layout tweaks for the card area */
+                
+            </style>
+
+            <div class="container">
+                <div class="card-grid">
+                    <% if (Array.isArray(favhome) && favhome.length > 0) { %>
+                        <% favhome.forEach(function(homename, index) { %>
+                            <div class="card" role="article">
+
+                                <div class="card-image-wrapper">
+                                    <img src="<%- (homename && homename.image) ? ((typeof homename.image === 'string' && homename.image.indexOf('data:') === 0) ? homename.image : (homename.image.length > 1000 ? 'https://via.placeholder.com/800x500?text=Image+Too+Large' : homename.image)) : 'https://via.placeholder.com/800x500?text=No+Image' %>"
+                                        alt="<%= (homename && homename.housename) ? homename.housename : 'Property' %>" 
+                                        class="card-image" 
+                                        loading="lazy" />
+                                    <div class="price-badge">$<%= (homename && homename.price) != null ? homename.price : '—' %></div>
+                                </div>
+
+                                <div class="card-content">
+                                    <h3 class="card-title">
+                                        <%= (homename && homename.housename) ? homename.housename : 'Unnamed Home' %>
+                                    </h3>
+
+                                    <p class="card-location">📍 <%= (homename && homename.location) ? homename.location : 'Unknown location' %></p>
+
+                                    <div class="card-details">
+                                        <div class="rating" title="Rating">
+                                            <span class="star">★</span>
+                                            <span class="rating-value">
+                                                <%= (homename && typeof homename.rating === 'number') ? homename.rating.toFixed(1) : ((homename && homename.rating) ? homename.rating : 'N/A') %>
+                                            </span>
+                                        </div>
+
+                                        <!-- <div class="card-actions" aria-hidden="false">
+                                            <a href="/homes/<%= index %>" class="btn-view"
+                                                aria-label="View <%= (homename && homename.housename) ? homename.housename : 'Unnamed Home' %>">View</a>
+
+                                            Prominent book button placed beside View for desktop, stacked on mobile -->
+                                            <!-- <a href="/book/<%= index %>" class="btn-book" aria-label="Book <%= (homename && homename.housename) ? homename.housename : 'Unnamed Home' %>">BOOK</a>
+                                        </div> -->
+                                        <form action="/favourite_list/deletefav/<%= homename._id%>" method="POST">
+                                                <button type="submit" class="btn-delete">Remove</button>
+                                            </form>
+                                    </div>
+                                </div>
+                            </div>
+                        <% }); %>
+                    <% } %>
+                </div>
+            </div>
+
+</body>
+
+</html>
