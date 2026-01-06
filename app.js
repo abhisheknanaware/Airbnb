@@ -6,7 +6,7 @@ const express = require('express');
 const path = require('path');
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
-const dbpath="mongodb+srv://root:7499631188@airbnbproject.nvhats3.mongodb.net/airbnb?appName=airbnbproject";
+const dbpath="mongodb+srv://root:kk@airbnbproject.nvhats3.mongodb.net/airbnb?appName=airbnbproject";
 const multer=require("multer")
 
 //local router
@@ -100,4 +100,5 @@ mongoose.connect(dbpath).then(()=>{
 })
 .catch(err=>{
     console.log("failed to connect to mongodb",err);
+
 });
