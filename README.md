@@ -1,62 +1,77 @@
-# 🏡 Airbnb Clone Web Application
+# 🏡 Airbnb-Like House Listing Application
 
-This is a **full-stack Airbnb-inspired web application** built from scratch to mimic core features of the Airbnb platform — allowing users to browse, list, book, and manage rentals.
+This repository contains a **full-stack Airbnb-style web application** designed for **house listing, rendering property details, and managing rental data**.
+
+The project focuses on building a **real-world rental platform architecture**, including backend logic, dynamic views, and structured routes for property management.
 
 ---
 
 ## 🚀 Overview
 
-This project replicates the basic functionality of the Airbnb platform with a custom backend, frontend views, routing, and CRUD operations for listings, users, and bookings.  
-The architecture includes:
+This application allows users to:
+- View available houses/properties
+- Render detailed house information
+- Add, update, and manage property listings
+- Navigate through a clean, Airbnb-inspired interface
 
-- 🛠️ Backend REST API
-- 📦 EJS / HTML frontend rendering
-- 🌐 Routes for users, properties, bookings
-- 📁 File uploads & utilities
-- 💾 Structured data models
+It demonstrates how a **rental platform** can be built using **Node.js, Express, templating engines, and MVC architecture**.
 
-This project is meant for **learning full-stack development**, understanding how modern rental platforms operate, and showcasing essential web-application features.
+---
+
+## 🧠 Core Features
+
+- 🏠 House/property listing and rendering
+- 📄 Detailed property pages (price, location, images, description)
+- ➕ Add new house listings
+- ✏️ Edit and update property details
+- ❌ Delete listings
+- 📂 Image/file upload support
+- 🧭 Dynamic routing with Express.js
+- 🗂️ Structured MVC architecture
+
+---
+
+## 🛠️ Tech Stack
+
+### 🔹 Backend
+- Node.js
+- Express.js
+- RESTful routing
+
+### 🔹 Frontend
+- EJS (Embedded JavaScript Templates)
+- HTML5
+- CSS3
+- JavaScript
+
+### 🔹 Database
+- MongoDB (or extendable to SQL-based databases)
+
+### 🔹 Tools & Utilities
+- Multer (file uploads)
+- Git & GitHub
+- Nodemon (development)
 
 ---
 
 ## 📁 Project Structure
-Airbnb/
-├── controllers/ # Controllers for route logic
-├── data/ # Seed / sample data
-├── models/ # Database models
-├── routes/ # Express routes
-├── uploads/ # Uploaded images/files
-├── utils/ # Utility functions
-├── views/ # EJS frontend templates
-├── app.js # App entry point
-├── package.json # Project metadata & dependencies
-└── nodemon.json # Dev auto-restart config
 
 
 ---
 
-## 🧠 Features
+## ⚙️ How It Works
 
-- 🔑 User authentication and session handling
-- 🏠 Property listing and browsing
-- 📅 Booking creation and management
-- 📸 Image uploads for listings
-- 🔄 Dynamic routing with Express.js
-- 🗂️ Structured data models and REST API endpoints
-- 🖥️ EJS templating for frontend views
-
-> This project lays the foundation for a fully functional rental marketplace and can be further extended with advanced features such as reviews, payments, and real-time availability checks.
+1. Users browse available house listings
+2. Property data is fetched from the database
+3. Each house is rendered dynamically on its own page
+4. Hosts can add, edit, or delete property listings
+5. Images and details are stored and rendered dynamically
 
 ---
 
-## 🚀 Technologies Used
+## ▶️ Setup & Installation
 
-- **Node.js**
-- **Express.js**
-- **EJS (Embedded JavaScript Templates)**
-- **JavaScript**
-- **CSS**
-- **File Uploads**
-- (Optional) Connect to databases like MongoDB or SQL for persistence
-
----
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/abhisheknanaware/Airbnb.git
+cd Airbnb
